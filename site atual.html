@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>MTech</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+  body {
+    background: #000;
+    color: #fff;
+    margin: 0;
+    font-family: 'Archivo Black', sans-serif;
+  }
+
+  .box {
+    height: 100vh;
+    position: relative;
+  }
+
+  .logo {
+    position: absolute;
+    top: -57px;
+    left: -20px;
+  }
+
+  .linha {
+    position: absolute;
+    top: 135px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+  }
+
+  /* botões */
+  .btn-servicos, .btn-sobre, .btn-aviso {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .btn-servicos { top: 55px; left: 188px; font-size: 26px; }
+  .btn-sobre    { top: 55px; left: 335px; font-size: 26px; }
+  .btn-aviso    { top: 60px; left: 505px; font-size: 20px; }
+
+  /* títulos */
+  .titulo-servicos { position: absolute; top: 150px; left: 520px; font-size: 30px; display: none; }
+  .titulo-sobre    { position: absolute; top: 150px; left: 535px; font-size: 30px; display: none; }
+  .titulo-aviso    { position: absolute; top: 150px; left: 567px; font-size: 30px; display: none; }
+
+  /* subtítulos centralizados com espaçamento custom */
+  .sub-servicos { position: absolute; top: 220px; left: 0; width: 100%; text-align: center; font-size: 18px; line-height: 1.8; display: none; }
+  .sub-sobre    { position: absolute; top: 220px; left: 0; width: 100%; text-align: center; font-size: 18px; line-height: 1.8; display: none; }
+  .sub-aviso    { position: absolute; top: 220px; left: 0; width: 100%; text-align: center; font-size: 18px; line-height: 1.8; display: none; }
+
+  /* botão whatsapp */
+  .btn-whatsapp {
+    position: absolute;
+    top: 500px;
+    left: 1200px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .btn-whatsapp img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+</style>
+</head>
+<body>
+<div class="box">
+  <img class="logo" src="https://i.ibb.co/6cDszCgP/MTech.png" width="250" height="250">
+  <div class="linha"></div>
+
+  <!-- botões -->
+  <div class="btn-servicos" onclick="mostrarServicos()">Serviços</div>
+  <div class="btn-sobre" onclick="mostrarSobre()">Sobre mim</div>
+  <div class="btn-aviso" onclick="mostrarAviso()">Aviso!</div>
+
+  <!-- conteúdos -->
+  <div class="titulo-servicos" id="tituloServ">O que fazemos</div>
+  <div class="sub-servicos" id="subServ">
+    Limpeza;<br>
+    Formatação;<br>
+    Troca de peças;<br>
+    Montagem;<br>
+    Upgrades (ssd, ram, etc.);<br>
+    Identificação de problemas;<br>
+    Reinstalação/troca de sistema.
+  </div>
+
+  <div class="titulo-sobre" id="tituloSobre">Quem sou eu?</div>
+  <div class="sub-sobre" id="subSobre">
+    #A SER ADICIONADO!#
+  </div>
+
+  <div class="titulo-aviso" id="tituloAviso">Atenção</div>
+  <div class="sub-aviso" id="subAviso">
+    Todo upgrade que o cliente <br>
+    não me dê as peças e/ou <br>
+    me autorize a fazer <br>
+    (se necessário) <br>
+    SERÁ cobrado valor A MAIS das <br>
+    peças ANTECIPADAMENTE. <br>
+  </div>
+
+  <!-- botão whatsapp -->
+  <a class="btn-whatsapp" href="https://wa.me/5511968519256?text=Olá,%20tudo%20bom?" target="_blank">
+    <img src="https://i.ibb.co/HL7ynkQ9/whatsapp-logo-whatsapp-icon-whatsapp-transparent-free-png.png" alt="whatsapp">
+  </a>
+</div>
+
+<script>
+  function esconderTodos() {
+    document.getElementById("tituloServ").style.display = "none";
+    document.getElementById("subServ").style.display = "none";
+    document.getElementById("tituloSobre").style.display = "none";
+    document.getElementById("subSobre").style.display = "none";
+    document.getElementById("tituloAviso").style.display = "none";
+    document.getElementById("subAviso").style.display = "none";
+  }
+
+  function mostrarServicos() {
+    esconderTodos();
+    document.getElementById("tituloServ").style.display = "block";
+    document.getElementById("subServ").style.display = "block";
+  }
+
+  function mostrarSobre() {
+    esconderTodos();
+    document.getElementById("tituloSobre").style.display = "block";
+    document.getElementById("subSobre").style.display = "block";
+  }
+
+  function mostrarAviso() {
+    esconderTodos();
+    document.getElementById("tituloAviso").style.display = "block";
+    document.getElementById("subAviso").style.display = "block";
+  }
+
+  // mostrar Serviços no boot da página
+  window.onload = mostrarServicos;
+</script>
+</body>
+</html>
